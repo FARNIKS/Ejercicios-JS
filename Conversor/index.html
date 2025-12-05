@@ -8,13 +8,16 @@
   </head>
   <body>
     <div class="container">
-      <h1>Conversor de unidades</h1>
+      <h1>Unit converter</h1>
       <div class="coversion">
-        <select id="conversionType">
-          <option value="length">Longitud</option>
-          <option value="temperature">Temperatura</option>
-          <option value="weight">Peso</option>
-          <option value="time">Tiempo</option>
+        <select id="conversionType" aria-placeholder="a">
+          <option value="" disabled selected hidden>
+            --- Select type: ---
+          </option>
+          <option value="length">Length</option>
+          <option value="temperature">Temperature</option>
+          <option value="weight">Weight</option>
+          <option value="time">Time</option>
         </select>
       </div>
       <div class="input-section">
@@ -22,9 +25,10 @@
         <select id="fromUnit"></select>
         <p>a</p>
         <select id="toUnit"></select>
+        <button id="buttonConvert">Convert</button>
       </div>
       <div>
-        <p>Resultado: <span id="result">0</span></p>
+        <p>Result: <span id="result">0</span></p>
       </div>
     </div>
     <script src="script.js"></script>
