@@ -7,6 +7,26 @@
     <title>Conversor</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Conversor de unidades</h1>
+      <div class="coversion">
+        <select id="conversionType">
+          <option value="length">Longitud</option>
+          <option value="temperature">Temperatura</option>
+          <option value="weight">Peso</option>
+          <option value="time">Tiempo</option>
+        </select>
+      </div>
+      <div class="input-section">
+        <input type="number" id="inputValue" placeholder="Ingrese el valor" />
+        <select id="fromUnit"></select>
+        <p>a</p>
+        <select id="toUnit"></select>
+      </div>
+      <div>
+        <p>Resultado: <span id="result">0</span></p>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
