@@ -64,9 +64,9 @@ formulario.addEventListener("submit", function (event) {
   event.preventDefault();
 
   // 2. Obtener los valores (los datos están frescos en este punto)
-  const nombre = inputName.value.trim();
+  const nombre = inputName.value.trim();//.trim(): Esta es una excelente práctica. Elimina los espacios en blanco accidentales al inicio o al final
   const email = inputEmail.value.trim();
-  const password = inputPassword.value;
+  const password = inputPassword.value;//.value: Extrae el texto literal del campo.
 
   // 3. Ejecutar todas las validaciones
   const isNameValid = validarNombre(nombre);
