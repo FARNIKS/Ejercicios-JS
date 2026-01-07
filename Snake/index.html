@@ -8,15 +8,19 @@
   </head>
   <body>
     <div class="containerSnakeGame">
-      <h1>Snake</h1>
-
-      <div id="board"></div>
-      <div class="boardInfo">
-        <div>Score: <span id="scoreBoard">0</span></div>
-        <button id="start">START</button>
+      <div class="snakeGame">
+        <h1>Snake</h1>
+        <div class="snakeImage" id="snakeImage">
+          <img src="imgs/Snake.png" alt="snake png" />
+        </div>
+        <div id="board"></div>
+        <div class="boardInfo">
+          <div>Score: <span id="scoreBoard">0</span></div>
+          <button id="start">START</button>
+        </div>
       </div>
+      <div id="gameOver">GAME OVER</div>
     </div>
-    <div id="gameOver">GAME OVER</div>
     <script src="script.js"></script>
   </body>
 </html>

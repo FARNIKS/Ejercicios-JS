@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   height: 100vh;
   background-color: black;
@@ -18,14 +19,22 @@
   font-size: 20px;
 }
 
+.snakeImage {
+  width: 400px;
+}
+.snakeImage img {
+  width: 100%;
+}
+
 #board,
 .boardInfo {
-  max-width: 500px;
+  width: 400px;
 }
 
 #board {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  background-color: #2d509c;
 }
 #start,
 .boardInfo {
@@ -34,6 +43,11 @@
 
 #gameOver {
   display: none;
+  background-color: #b33b3b;
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 15px;
 }
 
 .boardInfo {
@@ -71,4 +85,5 @@
 
 .foodSquare {
   background-color: #a83838;
+  border-radius: 20px;
 }
