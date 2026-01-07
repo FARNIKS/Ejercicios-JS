@@ -26,6 +26,12 @@ let boardSquares;
 let emptySquares;
 let moveInterval;
 
+/*@params
+square> posicion del cuadrado
+type> tipo de cuadrado (empty, snake, food)
+ */
+const drawSquare = (square, type) => {};
+
 const createBoard = () => {
   boardSquares.forEach((row, rowIndex) => {
     row.forEach((column, columnIndex) => {
@@ -55,6 +61,9 @@ const setGame = () => {
 
 const startGame = () => {
   setGame();
+  gameOver.style.display = "none";
+  startButton.disabled = true;
+  drawSnake();
 };
 
 startButton.addEventListener("click", startGame);

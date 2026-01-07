@@ -6,3 +6,6 @@ En los proyectos esta;
 - Contador
 - Formulario html
 - Conversor
+- Snake
+- Pomodoro/cronometro
+- tetris
