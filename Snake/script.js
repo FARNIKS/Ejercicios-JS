@@ -92,6 +92,7 @@ const gameOver = () => {
   gameOverSing.style.display = "block";
   clearInterval(moveInterval);
   startButton.disabled = false;
+  startButton.style.backgroundColor = "green";
 };
 
 const setDirection = (newDirection) => {
@@ -155,6 +156,7 @@ const startGame = () => {
   gameOverSing.style.display = "none";
   snakeImage.style.display = "none";
   startButton.disabled = true;
+  startButton.style.backgroundColor = "grey";
   drawSnake();
   updateScore();
   createRandomFood();
