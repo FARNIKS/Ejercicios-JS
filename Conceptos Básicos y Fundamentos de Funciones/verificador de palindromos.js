@@ -5,4 +5,4 @@ const esPalindromo = (palabra) => {
   return palabraLimpia.toLowerCase() === palabraRevertida.toLowerCase();
 };
 
-console.log(esPalindromo("51760671"));
+console.log(esPalindromo("1760671"));
