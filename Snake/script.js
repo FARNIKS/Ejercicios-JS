@@ -1,5 +1,6 @@
 const board = document.getElementById("board");
 const scoreBoard = document.getElementById("scoreBoard");
+const maxScoreBoard = document.getElementById("maxScoreBoard");
 const startButton = document.getElementById("start");
 const gameOverSing = document.getElementById("gameOver");
 const snakeImage = document.getElementById("snakeImage");
@@ -22,6 +23,7 @@ const directions = {
 // Variables de juego
 let snake;
 let score;
+let maxScore;
 let direction;
 let boardSquares;
 let emptySquares;
@@ -40,7 +42,7 @@ square> posicion del cuadrado
 type> tipo de cuadrado (empty, snake, food)
  */
 const drawSquare = (square, type) => {
-  const [row, column] = square.split("");
+  const [row, column] = square.split(""); //dividir el id del cuadrado en fila y columna
   boardSquares[row][column] = squareTypes[type];
   const squareElement = document.getElementById(square);
   squareElement.setAttribute("class", `square ${type}`);
@@ -73,18 +75,31 @@ const moveSnake = () => {
     snake.push(newSquare);
 
     if (boardSquares[row][column] === squareTypes.foodSquare) {
-      addFood();
+      addFood(); //aumentar la puntuacion y crear nueva comida
     } else {
-      const emptySquare = snake.shift();
+      const emptySquare = snake.shift(); //eliminar la cola de la serpiente
       drawSquare(emptySquare, "emptySquare");
     }
-    drawSnake();
+    drawSnake(); //redibujar la serpiente
   }
 };
+
+const scoreLogic = () => {
+  maxScore = maxScore || 0;
+
+  if (score >= maxScore) {
+    maxScore = score;
+    maxScoreBoard.innerText = maxScore;
+    console.log(maxScore);
+  }
+};
+
+const updateMaxScore = () => {};
 
 const addFood = () => {
   score++;
   updateScore();
+  scoreLogic();
   createRandomFood();
 };
 
@@ -143,7 +158,7 @@ const setGame = () => {
   direction = "ArrowRight";
   boardSquares = Array.from(Array(boardSize), () =>
     new Array(boardSize).fill(squareTypes.emptySquare)
-  );
+  ); // matriz 10x10 llena de ceros
   console.log(boardSquares);
   board.innerHTML = "";
   emptySquares = [];

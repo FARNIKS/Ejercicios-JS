@@ -9,17 +9,46 @@
   <body>
     <div class="containerSnakeGame">
       <div class="snakeGame">
-        <h1>Snake</h1>
+        <h1 class="title">Snake</h1>
         <div class="snakeImage" id="snakeImage">
           <img src="imgs/Snake.png" alt="snake png" />
         </div>
         <div id="board"></div>
         <div class="boardInfo">
           <div>Score: <span id="scoreBoard">0</span></div>
+          <div>Max Score: <span id="maxScoreBoard">0</span></div>
           <button id="start">START</button>
         </div>
+        <div id="gameOver">GAME OVER</div>
       </div>
-      <div id="gameOver">GAME OVER</div>
+      <div class="containerLoApredido">
+        <div class="navigationBar">
+          <button class="navigationButtons">
+            <a href="../Formulario HTML/index.html">Before</a>
+          </button>
+          <button class="navigationButtons">
+            <a href="../index.html">home</a>
+          </button>
+          <button class="navigationButtons">
+            <a href="../Contador/index.html">Next</a>
+          </button>
+        </div>
+        <h2>Lo que he aprendido</h2>
+        <p>
+          Snake es un juego clásico de serpiente donde se controla una serpiente
+          para que coma manzanas y crezca. que para la programacion se utilizo
+          HTML, CSS y JavaScript. y su logica para practicar y aprender mas del
+          lenguaje de programacion JavaScript.
+        </p>
+        <ul>
+          <li>Manipulacion del DOM</li>
+          <li>Eventos de teclado</li>
+          <li>Uso de arrays para manejar la logica del juego</li>
+          <li>Uso de setInterval y clearInterval para el bucle del juego</li>
+          <li>Logica de colisiones y crecimiento de la serpiente</li>
+          <li>Uso de funciones para modularizar el código</li>
+        </ul>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

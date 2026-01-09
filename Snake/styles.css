@@ -9,16 +9,43 @@
 }
 .containerSnakeGame {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 50px;
   height: 100vh;
   background-color: black;
   color: white;
   font-size: 20px;
 }
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.containerLoApredido {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.navigationButtons {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #424799;
+  border: none;
+}
 
+.navigationButtons a {
+  text-decoration: none;
+  color: white;
+}
+
+.title {
+  text-align: center;
+}
 .snakeImage {
   width: 400px;
 }
@@ -48,6 +75,9 @@
   padding: 10px;
   font-size: 40px;
   border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  margin: 20px auto;
 }
 
 .boardInfo {
@@ -84,6 +114,13 @@
 }
 
 .foodSquare {
+  display: flex;
   background-color: #a83838;
   border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.foodSquare::before {
+  content: "🍎";
 }
