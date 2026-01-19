@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.pomodoro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-family: "RobotoMono", monospace;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #fff;
+  color: #ffffff;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.circle::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  left: calc(50% - 200px);
+  top: calc(50% - 200px);
+  background-color: #1d1d1d;
+}
+
+.seconds-sphere {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: calc(50%-10);
+  top: calc(50%-10);
+  animation: rotateSeconds 60s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes rotateSeconds {
+  from {
+    transform: rotate(-90deg) translateX(145px);
+  }
+  to {
+    transform: rotate(270deg) translateX(145px);
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 30px;
+}
+
+.paused {
+  height: 30px;
+  border-width: 15px 0 15px 30px;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-left: 15px;
+  border-color: transparent transparent transparent #ffffff;
+  transition: 100ms all ease;
+  will-change: border-width;
+  border-style: solid;
+}
+
+.running {
+  border-style: double;
+  border-width: 0 0 0 30px;
+}
+
+.stop {
+  background-color: #fff;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
