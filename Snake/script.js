@@ -58,7 +58,7 @@ const drawSquare = (square, type) => {
 
 const moveSnake = () => {
   const newSquare = String(
-    Number(snake[snake.length - 1]) + directions[direction]
+    Number(snake[snake.length - 1]) + directions[direction],
   ).padStart(2, "0");
 
   const [row, column] = newSquare.split("");
@@ -157,7 +157,7 @@ const setGame = () => {
   score = snake.length - 4;
   direction = "ArrowRight";
   boardSquares = Array.from(Array(boardSize), () =>
-    new Array(boardSize).fill(squareTypes.emptySquare)
+    new Array(boardSize).fill(squareTypes.emptySquare),
   ); // matriz 10x10 llena de ceros
   console.log(boardSquares);
   board.innerHTML = "";

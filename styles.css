@@ -3,3 +3,38 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15px;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.descriptionPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.proyects {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.proyecto {
+  width: 300px;
+  background-color: rgb(167, 208, 241);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
