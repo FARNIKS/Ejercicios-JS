@@ -4,8 +4,8 @@ let secondSphere = document.getElementById("seconds-sphere");
 
 let stopwatchInterval;
 let runningTime = 0;
-const totalTime = 25 * 60 * 1000; //25 minutos en milisegundos
-const breakTime = 5 * 60 * 1000; //5 minutos en milisegundos
+const totalTime = 25000; //25 minutos en milisegundos
+const breakTime = 5000; //5 minutos en milisegundos
 let isbreak = false;
 let remainingTime = totalTime;
 
