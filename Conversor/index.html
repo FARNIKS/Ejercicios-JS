@@ -1,34 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>Conversor</title>
   </head>
   <body>
     <div class="container">
-      <h1>Unit converter</h1>
-      <div class="coversion">
-        <select id="conversionType" aria-placeholder="a">
-          <option value="" disabled selected hidden>
-            --- Select type: ---
-          </option>
-          <option value="length">Length</option>
-          <option value="temperature">Temperature</option>
-          <option value="weight">Weight</option>
-          <option value="time">Time</option>
-        </select>
+      <div class="conversor-container">
+        <h1>Unit converter</h1>
+        <div class="coversion">
+          <select
+            class="seleccionar-conversion"
+            id="conversionType"
+            aria-placeholder="a"
+          >
+            <option value="" disabled selected hidden>
+              --- Select type: ---
+            </option>
+            <option value="length">Length</option>
+            <option value="temperature">Temperature</option>
+            <option value="weight">Weight</option>
+            <option value="time">Time</option>
+          </select>
+        </div>
+        <div class="input-section">
+          <input
+            type="number"
+            id="inputValue"
+            class="input-selection"
+            placeholder="Ingrese el valor"
+          />
+          <select class="input-selection" id="fromUnit"></select>
+          <p>Convertir a</p>
+          <select class="input-selection" id="toUnit"></select>
+          <button class="buttonConvert" id="buttonConvert">Convert</button>
+        </div>
+        <div>
+          <p class="result">Resultado: <span id="result">0</span></p>
+        </div>
       </div>
-      <div class="input-section">
-        <input type="number" id="inputValue" placeholder="Ingrese el valor" />
-        <select id="fromUnit"></select>
-        <p>a</p>
-        <select id="toUnit"></select>
-        <button id="buttonConvert">Convert</button>
-      </div>
-      <div>
-        <p>Result: <span id="result">0</span></p>
+      <div class="learned-container">
+        <div class="navigationBar">
+          <button
+            class="navigationButtons"
+            onclick="location.href = '../Contador/index.html'"
+          >
+            <i class="fas fa-arrow-left"></i>
+          </button>
+
+          <button
+            class="navigationButtons"
+            onclick="location.href = '../index.html'"
+          >
+            <i class="fas fa-home"></i>
+          </button>
+
+          <button
+            class="navigationButtons"
+            onclick="location.href = '../Formulario HTML/index.html'"
+          >
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <h2>Lo aprendido</h2>
+        <ul>
+          <li class="li-learned">
+            <strong>Optimización de lógica:</strong> Sustituí código redundante
+            y anidado (<em>Pyramid of Doom</em>) por soluciones recursivas más
+            elegantes y eficientes.
+          </li>
+          <li class="li-learned">
+            <strong>Escalabilidad:</strong> Implementé el uso de arrays con
+            valores generales y una unidad base, facilitando la conversión entre
+            cualquier tipo de unidad.
+          </li>
+          <li class="li-learned">
+            <strong>Interacción y DOM:</strong> Profundicé en el manejo avanzado
+            de eventos y la manipulación dinámica de elementos del DOM.
+          </li>
+          <li class="li-learned">
+            <strong>Control de flujo:</strong> Utilicé estructuras
+            <code>switch case</code> para gestionar las diferentes lógicas de
+            conversión de forma organizada.
+          </li>
+        </ul>
       </div>
     </div>
     <script src="script.js"></script>

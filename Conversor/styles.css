@@ -4,16 +4,117 @@
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  background-color: #434547;
+  color: #333;
+}
+li {
+  list-style: none;
 }
 
-.input-section {
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+.conversor-container {
+  width: 400px;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #d4d4d4;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
   gap: 10px;
+}
+
+.seleccionar-conversion {
+  width: 100%;
+  font-size: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.input-selection {
+  width: 100%;
+  font-size: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+  border: none;
+}
+
+.buttonConvert {
+  font-weight: bold;
+  width: 100%;
+  font-size: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ac0a04;
+  color: #fff;
+  border: none;
+}
+
+.buttonConvert:hover {
+  background-color: #ac3b06;
+  cursor: pointer;
+}
+
+.result {
+  font-weight: bold;
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  width: 100%;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #424799;
+  color: white;
+  border: none;
+}
+
+.navigationButtons a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigationButtons:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.learned-container {
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #d4d4d4;
+}
+.li-learned {
+  margin-bottom: 15px;
 }
