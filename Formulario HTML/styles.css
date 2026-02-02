@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.validador-formularios-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9e9e9;
+  gap: 20px;
+}
+.container-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 400px;
+  gap: 15px;
+}
+.input-formulario {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.boton-formulario {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.boton-formulario:hover {
+  background-color: #0056b3;
+}
+.aprendido {
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-size: 20px;
+  gap: 10px;
+}
+.aprendido-item {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  width: 100%;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #424799;
+  color: white;
+  border: none;
+}
+
+.containerLoApredido {
+  max-width: 400px;
+  padding: 20px;
+}
+
+.navigationButtons a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigationButtons:hover {
+  background-color: #f44336;
+  color: white;
+}
