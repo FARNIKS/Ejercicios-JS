@@ -10,18 +10,57 @@ main {
   display: flex;
   flex-direction: column;
 }
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 35px;
+}
 
-.pomodoro {
-  height: 100vh;
+p,
+li {
+  font-size: 20px;
+}
+
+.container-cronometro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-family: "RobotoMono", monospace;
+  padding: 20px;
+  gap: 50px;
+}
+.cronometro {
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 40px;
   font-family: "RobotoMono", monospace;
+  position: relative;
+  width: fit-content;
+  height: auto;
+}
+.aprendizaje {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #d3d3d3;
+  border-radius: 8px;
+  color: #272727;
+}
+
+.aprendizaje li {
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 .circle {
+  position: relative;
   border-radius: 50%;
   width: 300px;
   height: 300px;
@@ -32,37 +71,42 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: transparent;
 }
 .circle::before {
   content: "";
   z-index: -1;
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-  left: calc(50% - 200px);
-  top: calc(50% - 200px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #1d1d1d;
 }
 
 .seconds-sphere {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
-  left: calc(50%-10);
-  top: calc(50%-10);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg) translateX(145px);
+  transform-origin: center center;
+  will-change: transform;
   animation: rotateSeconds 60s linear infinite;
   animation-play-state: paused;
 }
 
 @keyframes rotateSeconds {
   from {
-    transform: rotate(-90deg) translateX(145px);
+    transform: translate(-50%, -50%) rotate(-90deg) translateX(145px);
   }
   to {
-    transform: rotate(270deg) translateX(145px);
+    transform: translate(-50%, -50%) rotate(270deg) translateX(145px);
   }
 }
 
@@ -94,4 +138,38 @@ main {
   height: 30px;
   width: 30px;
   cursor: pointer;
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  width: 100%;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #424799;
+  color: white;
+  border: none;
+}
+
+.containerLoApredido {
+  max-width: 400px;
+  padding: 20px;
+}
+
+.navigationButtons a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigationButtons:hover {
+  background-color: #f44336;
+  color: white;
 }
