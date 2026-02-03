@@ -4,13 +4,18 @@
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+}
 .proyectoconocimiento {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  min-height: 100vh;
+  gap: 40px;
   padding: 20px;
   font-family: "century gothic", "Times New Roman", Times, serif;
 }
@@ -18,15 +23,24 @@
 .Conocimiento {
   width: 300px;
   flex-direction: column;
-  align-self: baseline;
 }
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  width: 100%;
+}
+
 .navigationButtons {
-  font-family: "century gothic";
-  font-weight: 800;
+  display: flex;
+  flex-direction: row;
   font-size: 20px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #424799;
+  color: white;
   border: none;
 }
 

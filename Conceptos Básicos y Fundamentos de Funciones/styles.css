@@ -1,0 +1,153 @@
+:root {
+  --bg: #f7f9fc;
+  --card: #fff;
+  --muted: #6b6f76;
+  --accent: #5167ff;
+  --code: #0b1220;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial;
+  background: var(--bg);
+  margin: 0;
+  color: #122;
+}
+header {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+p.lead {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.exercises {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 18px;
+}
+.exercise {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+.exercise h2 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+.exercise p.desc {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.learned {
+  margin: 8px 0 0;
+  padding: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 24, 40, 0.02),
+    rgba(16, 24, 40, 0.01)
+  );
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.learned li {
+  margin: 6px 0;
+}
+.code-wrap {
+  background: #0f1720;
+  color: #e6eef6;
+  border-radius: 8px;
+  padding: 12px;
+  overflow: auto;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New",
+    monospace;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.btn-copy {
+  background: linear-gradient(90deg, var(--accent), #3b54ff);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+pre {
+  margin: 0;
+  white-space: pre;
+}
+@media (max-width: 520px) {
+  .exercise {
+    padding: 12px;
+  }
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 18px; /* centered and spaced from content */
+  gap: 10px;
+  max-width: 1100px; /* same as main/header */
+  padding: 0 20px; /* horizontal padding so it aligns with header/main */
+  box-sizing: border-box;
+}
+
+.navigationButtons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #424799;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.navigationButtons a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigationButtons:hover {
+  background-color: #f44336;
+  color: white;
+}

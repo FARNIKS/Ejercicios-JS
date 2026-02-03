@@ -13,11 +13,14 @@
 
 body {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: #5c4b7a;
   color: white;
   height: 100vh;
+  gap: 50px;
 }
 
 input,
@@ -74,4 +77,48 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   height: 10px;
   width: 10px;
+}
+
+.aprendizaje {
+  width: 400px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.aprendizaje-items {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.aprendizaje-items li {
+  margin-top: 5px;
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  width: 100%;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #7e7e83;
+  color: white;
+  border: none;
+}
+
+.navigationButtons a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigationButtons:hover {
+  background-color: #f44336;
+  color: white;
 }

@@ -6,32 +6,86 @@
     <title>Cifrado cesar</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <main>
-      <h1>Cifrado cesar</h1>
-      <form id="cifrador" autocomplete="off">
-        <input
-          id="input-original"
-          spellcheck="false"
-          placeholder="Ingrese el texto"
-          type="text"
-          name="text"
-        />
-        <div id="resultado"></div>
-        <div class="rango">
+      <div class="container-cifrado">
+        <h1>Cifrado cesar</h1>
+        <form id="cifrador" autocomplete="off">
           <input
-            id="rango"
-            type="range"
-            value="10"
-            min="1"
-            max="20"
-            oninput="this.nextElementSibling.value = this.value"
+            id="input-original"
+            spellcheck="false"
+            placeholder="Ingrese el texto"
+            type="text"
+            name="text"
           />
+          <div id="resultado"></div>
+          <div class="rango">
+            <input
+              id="rango"
+              type="range"
+              value="10"
+              min="1"
+              max="20"
+              oninput="this.nextElementSibling.value = this.value"
+            />
 
-          <output> 10 </output>
-        </div>
-      </form>
+            <output> 10 </output>
+          </div>
+        </form>
+      </div>
     </main>
+    <div class="aprendizaje">
+      <div class="navigationBar">
+        <button
+          class="navigationButtons"
+          onclick="location.href = '../Pomodoro/index.html'"
+        >
+          <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <button
+          class="navigationButtons"
+          onclick="location.href = '../index.html'"
+        >
+          <i class="fas fa-home"></i>
+        </button>
+
+        <button
+          class="navigationButtons"
+          onclick="
+            location.href =
+              '../Conceptos Básicos y Fundamentos de Funciones/index.html'
+          "
+        >
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <h2>Aprendizaje</h2>
+      <p>
+        Este proyecto trata de un cifrado cesar con funciones de encriptacion y
+        desencriptacion consistente en desplazar las letras del alfabeto un
+        numero determinado de posiciones, el cual se selecciona con un rango.
+      </p>
+      <ul class="aprendizaje-items">
+        <li>
+          <strong>HTML:</strong> Estructura del formulario, input, output y
+          rango.
+        </li>
+        <li>
+          <strong>CSS:</strong> Estilos para el contenedor, formulario e
+          interactividad con el rango.
+        </li>
+        <li>
+          <strong>JavaScript:</strong> Funciones para encriptar y desencriptar
+          el texto ingresado, manejo de eventos y actualización del resultado en
+          el DOM.
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

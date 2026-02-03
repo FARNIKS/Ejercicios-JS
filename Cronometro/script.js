@@ -41,8 +41,9 @@ const pause = () => {
 };
 
 const stop = () => {
-  secondSphere.style.transform = "rotate(-90deg) translateX(145px)";
   secondSphere.style.animation = "none";
+  secondSphere.style.transform =
+    "translate(-50%, -50%) rotate(-90deg) translateX(145px)";
   playPausedButton.classList.remove("running");
   runningTime = 0;
   clearInterval(stopwatchInterval);

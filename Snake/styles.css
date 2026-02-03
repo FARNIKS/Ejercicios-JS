@@ -7,6 +7,9 @@
   font-family: "Jersey 10", sans-serif;
   font-weight: 400;
 }
+body {
+  background-color: black;
+}
 .containerSnakeGame {
   display: flex;
   flex-wrap: wrap;
@@ -15,27 +18,31 @@
   align-items: center;
   gap: 50px;
   height: 100vh;
-  background-color: black;
   color: white;
   font-size: 20px;
 }
 .navigationBar {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-}
-.containerLoApredido {
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 10px;
   gap: 10px;
+  width: 100%;
 }
+
 .navigationButtons {
+  display: flex;
+  flex-direction: row;
   font-size: 20px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #424799;
+  color: white;
   border: none;
+}
+
+.containerLoApredido {
+  max-width: 400px;
+  padding: 20px;
 }
 
 .navigationButtons a {
@@ -43,11 +50,19 @@
   color: white;
 }
 
+.navigationButtons:hover {
+  background-color: #f44336;
+  color: white;
+}
+.learned-container {
+  padding-left: 20px;
+}
+
 .title {
   text-align: center;
 }
 .snakeImage {
-  width: 400px;
+  max-width: 400px;
 }
 .snakeImage img {
   width: 100%;
@@ -55,7 +70,7 @@
 
 #board,
 .boardInfo {
-  width: 400px;
+  max-width: 400px;
 }
 
 #board {
