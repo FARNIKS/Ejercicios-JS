@@ -11,58 +11,82 @@ main {
   flex-direction: column;
 }
 
-.pomodoro {
+.container-pomodoro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 60px;
+  width: 100%;
   height: 100vh;
+}
+
+.pomodoro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 40px;
   font-family: "RobotoMono", monospace;
+  position: relative;
+  height: auto;
+  max-width: 400px;
+}
+.pomodoro h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 35px;
 }
 
 .circle {
+  position: relative;
   border-radius: 50%;
   width: 300px;
   height: 300px;
   border: 2px solid #fff;
   color: #ffffff;
-  margin: 50px auto;
+  margin: 30px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: transparent;
 }
 .circle::before {
   content: "";
   z-index: -1;
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-  left: calc(50% - 200px);
-  top: calc(50% - 200px);
-  background-color: #1d1d1d;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #aa1313;
 }
 
 .seconds-sphere {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
-  left: calc(50%-10);
-  top: calc(50%-10);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg) translateX(145px);
+  transform-origin: center center;
+  will-change: transform;
   animation: rotateSeconds 60s linear infinite;
   animation-play-state: paused;
 }
 
 @keyframes rotateSeconds {
   from {
-    transform: rotate(-90deg) translateX(145px);
+    transform: translate(-50%, -50%) rotate(-90deg) translateX(145px);
   }
   to {
-    transform: rotate(270deg) translateX(145px);
+    transform: translate(-50%, -50%) rotate(270deg) translateX(145px);
   }
 }
 
@@ -94,4 +118,48 @@ main {
   height: 30px;
   width: 30px;
   cursor: pointer;
+}
+
+.aprendizaje {
+  max-width: 400px;
+  font-size: 20px;
+  font-family: "RobotoMono", monospace;
+  padding: 20px;
+  background-color: #d3d3d3;
+  border-radius: 8px;
+  color: #272727;
+}
+
+.aprendizaje li {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  width: 100%;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #424799;
+  color: white;
+  border: none;
+}
+
+.navigationButtons a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigationButtons:hover {
+  background-color: #f44336;
+  color: white;
 }

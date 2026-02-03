@@ -1,9 +1,402 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ejercicios - Conceptos Básicos y Fundamentos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Ejercicios: Conceptos Básicos y Fundamentos de Funciones</h1>
+      <p class="lead">
+        Aquí tienes el código completo de cada ejercicio en un contenedor con
+        título y breve descripción. Usa el botón "Copiar" para copiar el código
+        al portapapeles.
+      </p>
+    </header>
+    <div class="navigationBar">
+      <button
+        class="navigationButtons"
+        onclick="location.href = '../Cifrado cesar/index.html'"
+      >
+        <i class="fas fa-arrow-left"></i>
+      </button>
+
+      <button
+        class="navigationButtons"
+        onclick="location.href = '../index.html'"
+      >
+        <i class="fas fa-home"></i>
+      </button>
+
+      <button
+        class="navigationButtons"
+        onclick="location.href = '../Contador/index.html'"
+      >
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+    <main>
+      <section class="exercises">
+        <article class="exercise">
+          <h2>Aplanar arreglos</h2>
+          <p class="desc">
+            Aplana arrays anidados a un único array usando
+            <code>flat(Infinity)</code>.
+          </p>
+          <ul class="learned">
+            <li>Cómo combinar varios arrays en uno (concat / spread).</li>
+            <li>
+              Uso de <code>flat(Infinity)</code> para aplanar cualquier
+              profundidad anidada.
+            </li>
+            <li>
+              Ventaja: facilita el procesamiento posterior (map, filter,
+              reduce).
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-aplanar">let arraysanidados = [
+  "hola",
+  "Buenos dias",
+  ["Hello World", 1, 2, 3, 4],
+  ["A", "B", "C", ["Puuto", "El que lo lea"]],
+];
+let arrayDos = ["Mamaweboi", 1, 2, 4, 5, 66, 77, 88, 99];
+let arraynueve = [
+  "hola",
+  "Buenos dias",
+  ["Hello World", 1, 2, 3, 4],
+  ["A", "B", "C", ["Puuto", "El que lo lea"]],
+];
+
+const aplanarArray = (...arrays) =&gt; {
+  // 1. Unimos todos los arrays de entrada en una sola lista (el Array Maestro)
+  const arrayMaestro = [].concat(...arrays);
+
+  // 2. Usamos flat(Infinity) para aplanar cualquier nivel de profundidad
+  return arrayMaestro.flat(Infinity);
+};
+console.log(aplanarArray(arraysanidados, arrayDos, arraynueve));</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-aplanar">Copiar</button>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <h2>Calculadora</h2>
+          <p class="desc">
+            Función <code>calcular</code> que soporta sumar, restar, multiplicar
+            y dividir con manejo de división por cero.
+          </p>
+          <ul class="learned">
+            <li>
+              Normalizar entradas (por ejemplo
+              <code>operacion.toLowerCase()</code>) para robustez.
+            </li>
+            <li>
+              Uso de <code>switch</code> para elegir la operación y mantener el
+              código claro.
+            </li>
+            <li>
+              Manejo de errores (e.g., división por cero) y retorno de mensajes
+              útiles.
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-calculadora">const calcular = (operacion, num1, num2) =&gt; {
+  switch (operacion.toLowerCase()) {
+    case "sumar":
+      return num1 + num2;
+
+    case "restar":
+      return num1 - num2;
+
+    case "multiplicar":
+      return num1 * num2;
+
+    case "dividir":
+      if (num2 === 0) {
+        return "Error: No se puede dividir por 0";
+      }
+      return num1 / num2;
+
+    default:
+      return " operacion invalida";
+  }
+};
+
+let resultado = calcular("Dividir", 3, 0);
+
+console.log(resultado);</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-calculadora">
+              Copiar
+            </button>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <h2>Contador de caracteres</h2>
+          <p class="desc">
+            Cuenta la frecuencia de cada carácter en una cadena, ignorando
+            espacios y normalizando a minúsculas.
+          </p>
+          <ul class="learned">
+            <li>
+              Iterar sobre una cadena y usar un objeto como contador (mapa
+              simple).
+            </li>
+            <li>
+              Normalizar caracteres (<code>toLowerCase()</code>) para contar sin
+              distinguir mayúsculas/minúsculas.
+            </li>
+            <li>
+              Ignorar caracteres no deseados (espacios) y usar short-circuit
+              para inicializar contadores.
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-contador">let cadenas = new String("Hola que hace");
+
+const contadorCaracteres = (cadena) =&gt; {
+  let objetoAuxiliar = {};
+
+  for (let caracter of cadenas) {
+    if (caracter == " ") {
+      continue;
+    }
+
+    caracterminuscula = caracter.toLowerCase();
+    objetoAuxiliar[caracterminuscula] =
+      (objetoAuxiliar[caracterminuscula] || 0) + 1;
+  }
+
+  return objetoAuxiliar;
+};
+
+console.log(contadorCaracteres(cadenas));</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-contador">Copiar</button>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <h2>Eliminar números repetidos</h2>
+          <p class="desc">
+            Filtra y devuelve sólo los números que aparecen una vez en el array.
+          </p>
+          <ul class="learned">
+            <li>
+              Contar ocurrencias con <code>reduce</code> para construir un mapa
+              de frecuencias.
+            </li>
+            <li>
+              Filtrar por valores cuyo conteo sea 1 para obtener elementos
+              únicos.
+            </li>
+            <li>
+              Patrón útil para eliminar duplicados manteniendo sólo elementos no
+              repetidos.
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-eliminar">let numeros = [1, 1, 4, 5, 6, 7, 8, 9, 9, 10, 3, 5, 11, 88, 100];
+
+const numerosLimpios = numeros.reduce((contador, num) =&gt; {
+  contador[num] = (contador[num] || 0) + 1;
+  return contador;
+}, {});
+
+const filtrarNumeros = numeros.filter((num) =&gt; {
+  const conteo = numerosLimpios[num];
+  return conteo === 1;
+});
+
+console.log(filtrarNumeros);</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-eliminar">Copiar</button>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <h2>Filtrar pares</h2>
+          <p class="desc">
+            Devuelve todos los números pares usando <code>filter</code>.
+          </p>
+          <ul class="learned">
+            <li>
+              Uso de <code>filter</code> para extraer elementos que cumplen una
+              condición.
+            </li>
+            <li>Operador módulo (<code>%</code>) para verificar paridad.</li>
+            <li>
+              Función pura y fácil de componer con otras transformaciones (map,
+              reduce).
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-espar">numeros = [2, 5, 7, 9, 11, 13, 16, 100, 11111, 1231456, 123144, 234, 2345];
+const esPar = numeros.filter((num) =&gt; num % 2 === 0);
+
+console.log(esPar);</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-espar">Copiar</button>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <h2>Gestión de inventario</h2>
+          <p class="desc">
+            Estructura simple de inventario con funciones para agregar y comprar
+            productos con control de stock.
+          </p>
+          <ul class="learned">
+            <li>Uso de objetos como mapas para almacenar stock por clave.</li>
+            <li>
+              Funciones que modifican estado y validaciones (producto
+              inexistente, stock insuficiente).
+            </li>
+            <li>
+              Patrones básicos de mutación y retorno de mensajes para feedback
+              al usuario.
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-gestion">inventario = {
+  jabon: 50,
+  shampoo: 30,
+  arroz: 100,
+  pasta: 75,
+  aceite: 40,
+  detergente: 60,
+};
+
+function agregarProducto(producto, cantidad) {
+  if (inventario[producto] == undefined) {
+    inventario[producto] = cantidad;
+  } else {
+    inventario[producto] += cantidad;
+  }
+}
+
+agregarProducto("papaya", 20);
+
+console.log(inventario);
+
+agregarProducto("jabon", 20);
+
+console.log(inventario["jabon"]);
+
+compraProducto = (producto, cantidad) =&gt; {
+  if (inventario[producto] == undefined) {
+    agregarProducto(producto, cantidad);
+    return (
+      "El producto no existe en el inventario pero vamos a agregarlo agregarlo\n",
+      inventario
+    );
+  } else if (inventario[producto] < cantidad) {
+    return "No hay suficiente inventario del producto";
+  } else {
+    inventario[producto] -= cantidad;
+    return `Compra exitosa. Quedan ${inventario[producto]} unidades de ${producto}`;
+  }
+};
+
+let producto = "Guayaba";
+let cantidad = "5";
+
+let mensaje = compraProducto(producto, parseInt(cantidad));
+
+console.log(mensaje);</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-gestion">Copiar</button>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <h2>Suma y promedio</h2>
+          <p class="desc">
+            Suma elementos de un array y calcula su promedio con manejo para
+            arrays vacíos.
+          </p>
+          <ul class="learned">
+            <li>
+              Uso de <code>reduce</code> para acumular valores eficientemente.
+            </li>
+            <li>
+              Control para casos borde (array vacío) y uso de operador ternario.
+            </li>
+            <li>
+              Atención a la precisión y validaciones antes de operar con
+              números.
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-suma">let numeros = [];
+const sumaArreglos = numeros.reduce((acc, numero) =&gt; {
+  return acc + numero;
+}, 0);
+
+const promedio = numeros.length > 0 ? sumaArreglos / numeros.length : "PLUTO";
+
+console.log("Suma: ", sumaArreglos);
+console.log("Promedio: ", promedio);</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-suma">Copiar</button>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <h2>Verificador de palíndromos</h2>
+          <p class="desc">
+            Verifica si una cadena o número es palíndromo; ignora espacios y
+            mayúsculas.
+          </p>
+          <ul class="learned">
+            <li>
+              Normalizar la entrada (eliminar espacios y bajar a minúsculas)
+              antes de comparar.
+            </li>
+            <li>
+              Invertir cadenas (<code>split('').reverse().join('')</code>) para
+              comparación simple.
+            </li>
+            <li>
+              Aplicable a palabras, números y frases tras el preprocesado.
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <pre><code id="code-palindromo">const esPalindromo = (palabra) =&gt; {
+  let palabraLimpia = palabra.replace(/\s/g, ""); // Elimina espacios en blanco
+  let palabraRevertida = palabraLimpia.split("").reverse().join(""); // Lo convierte en un arrai se revierte y el join hace que se retorne una nueva cadena
+
+  return palabraLimpia.toLowerCase() === palabraRevertida.toLowerCase();
+};
+
+console.log(esPalindromo("1760671"));</code></pre>
+          </div>
+          <div class="meta">
+            <button class="btn-copy" data-target="code-palindromo">
+              Copiar
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>
